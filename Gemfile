@@ -56,7 +56,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'guard'
+  gem 'guard-rubocop'
   gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'terminal-notifier-guard'
 end
 
 group :test do
