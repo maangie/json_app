@@ -60,6 +60,7 @@ group :development do
   gem 'guard-rubocop'
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'simplecov'
   gem 'terminal-notifier-guard'
 end
 
