@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class GetJsonController < ApplicationController
-  def sample; end
+  def sample
+    render json: { foo: 'bar' }
+  end
 end
