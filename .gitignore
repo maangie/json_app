@@ -32,3 +32,6 @@
 
 # Ignore output by simplecov
 /coverage
+
+# Ignore Intellij
+/.idea
