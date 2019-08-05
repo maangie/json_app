@@ -5,9 +5,13 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 require 'simplecov'
-SimpleCov.start
 
-require 'minitest/autorun'
+SimpleCov.start 'rails' do
+  add_filter 'app/channels/application_cable'
+  add_filter 'app/jobs'
+  add_filter 'app/mailers/application_mailer.rb'
+  add_filter 'app/models/application_record.rb'
+end
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
