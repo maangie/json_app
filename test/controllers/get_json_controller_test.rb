@@ -7,4 +7,9 @@ class GetJsonControllerTest < ActionDispatch::IntegrationTest
     get get_json_sample_url
     assert_response :success
   end
+
+  test 'should get user' do
+    get get_json_user_url
+    assert_response :success
+  end
 end
