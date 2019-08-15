@@ -26,6 +26,8 @@ Style/Documentation:
     - 'config/application.rb'
     - 'app/controllers/get_json_controller.rb'
     - 'app/helpers/get_json_helper.rb'
+    - 'app/controllers/get_xml_controller.rb'
+    - 'app/helpers/get_xml_helper.rb'
 
 # Offense count: 2
 Style/MixinUsage:
