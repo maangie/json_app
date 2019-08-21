@@ -33,5 +33,10 @@
 # Ignore output by simplecov
 /coverage
 
-# Ignore Intellij
 /.idea
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
