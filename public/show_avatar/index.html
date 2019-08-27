@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- add mocha css, to show results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+      'use strict';
+      mocha.setup('bdd'); // minimal setup
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+      'use strict';
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/7.2.2/sinon.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+
+      function loadJson(url) {
+        return fetch(url).then(response => response.json());
+      }
+
+      function loadGithubUser(name) {
+        return fetch(`https://api.github.com/users/${name}`)
+          .then(response => response.json());
+      }
+
+      function showAvatar(githubUser) {
+        return new Promise(function (resolve, reject) {
+          let img = document.createElement('img');
+          img.src = githubUser.avatar_url;
+          img.className = 'promise-avatar-example';
+          document.body.append(img);
+
+          setTimeout(() => {
+            img.remove();
+            resolve(githubUser);
+          }, 3000);
+        });
+      }
+
+    </script>
+
+    <!-- the script with tests (describe, it...) -->
+    <script src="test.js"></script>
+
+    <!-- the element with id="mocha" will contain test results -->
+    <div id="mocha"></div>
+
+    <!-- run tests! -->
+    <script>
+      'use strict';
+      mocha.run();
+    </script>
+  </body>
+</html>
