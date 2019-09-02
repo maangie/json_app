@@ -2,5 +2,11 @@
 <script type='module'>
   'use strict';
   import { sayHi } from './say.js';
+  console.log(`in module: ${typeof button}`);
+
   document.body.innerHTML = sayHi('John');
+  console.log(import.meta);
 </script>
+<body>
+  <button id='button'>Button</button>
+</body>
